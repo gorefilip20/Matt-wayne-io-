@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-gray-400 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-ink-950;
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Long-form guide typography */
+  .guide-prose {
+    @apply text-[1.0625rem] leading-[1.8] text-gray-400;
+  }
+  .guide-prose > * + * {
+    @apply mt-5;
+  }
+  .guide-prose h2 {
+    @apply mt-14 text-2xl font-bold tracking-tight text-white sm:text-[1.75rem];
+  }
+  .guide-prose h3 {
+    @apply mt-8 text-lg font-semibold text-white;
+  }
+  .guide-prose strong {
+    @apply font-semibold text-white;
+  }
+  .guide-prose a {
+    @apply font-medium text-brand-400 underline decoration-brand-500/40 underline-offset-4 transition-colors hover:decoration-brand-400;
+  }
+  .guide-prose :not(pre) > code {
+    @apply rounded-md border border-gray-800 bg-gray-900 px-1.5 py-0.5 font-mono text-[0.875em] text-brand-400;
+  }
+  .guide-prose ul.bullets {
+    @apply space-y-2 pl-5;
+  }
+  .guide-prose ul.bullets > li {
+    @apply relative pl-1;
+  }
+  .guide-prose ul.bullets > li::before {
+    content: "";
+    @apply absolute -left-4 top-[0.8em] h-1.5 w-1.5 rounded-full bg-brand-500;
+  }
+  .guide-prose ol.numbers {
+    @apply list-decimal space-y-2 pl-6 marker:font-semibold marker:text-brand-400;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
