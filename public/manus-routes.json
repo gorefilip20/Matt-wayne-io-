@@ -1,1 +1,1 @@
-{"routes":[{"path":"/","title":"Matt Wayne — Coin Sniping Strategy"}]}
+{"routes":[{"path":"/","title":"Matt Wayne — Coin Sniping Strategy"},{"path":"/admin","title":"Newsletter Studio"},{"path":"/admin/login","title":"Admin sign in"},{"path":"/unsubscribe/:token","title":"Email preferences"}]}
